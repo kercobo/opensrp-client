@@ -18,6 +18,10 @@
         "bind": "/model/instance/ANC_Visit/ref_date"
       },
       {
+        "name":"nohp",
+        "bind": "/model/instance?ANC_Visit/nomor_telpon_hp"
+      }
+      {
         "name": "ancDate",
         "bind": "/model/instance/ANC_Visit/anc_date"
       },

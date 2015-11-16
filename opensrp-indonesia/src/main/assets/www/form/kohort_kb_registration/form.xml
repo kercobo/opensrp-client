@@ -235,7 +235,7 @@
             Keluarga
         </span>
         <input name="/register_kb/nomor_telpon_hp" data-constraint=".&gt;0 and .&lt;100000000000" data-type-xml="string"
-            required="required" type="text" />
+             type="text" />
     </label>
     <fieldset class="question ">
         <fieldset>

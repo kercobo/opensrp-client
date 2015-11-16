@@ -15,6 +15,49 @@
       <span lang="en" class="or-hint " data-itext-id="/ANC_Visit/anc_date:hint">Fill in the date of check-up</span>
       <input type="date" name="/ANC_Visit/anc_date" required="required" data-type-xml="date" />
    </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="Bahasa" class="question-label active" data-itext-id="/ANC_Visit/nomortelpon:label">Apakah ibu memiliki nomor telpon?</span>
+            <span class="required">*</span>
+            <span lang="" class="or-hint active">Menunjukkan nomor telpon Ibu yang dapat dihubungi</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/ANC_Visit/nomortelpon" data-name="/ANC_Visit/nomortelpon" value="Ya" required="required" data-type-xml="select1" />
+               <span lang="Bahasa" class="option-label active" data-itext-id="/ANC_Visit/nomortelpon/Ya:label">Ya</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/ANC_Visit/nomortelpon" data-name="/ANC_Visit/nomortelpon" value="Tidak" required="required" data-type-xml="select1" />
+               <span lang="Bahasa" class="option-label active" data-itext-id="/ANC_Visit/nomortelpon/Tidak:label">Tidak</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="or-constraint-msg active">Nomer telpon tidak boleh lebih dari 12 digit</span>
+      <span lang="Bahasa" class="question-label active" data-itext-id="/ANC_Visit/nomor_telpon_hp:label">Nomor Telpon/Hp</span>
+      <span class="required">*</span>
+      <span lang="" class="or-hint active">Nomor Telpon/Hp yang dimiliki Oleh Ibu</span>
+      <input type="text" name="/ANC_Visit/nomor_telpon_hp" required="required" data-constraint=".&gt;0 and .&lt;100000000000" data-relevant=" /ANC_Visit/nomortelpon  = 'Ya'" data-type-xml="string" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="Bahasa" class="question-label active" data-itext-id="/ANC_Visit/pptest:label">Hasil pptest</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/ANC_Visit/pptest" data-name="/ANC_Visit/pptest" value="positive" data-type-xml="select1" />
+               <span lang="Bahasa" class="option-label active" data-itext-id="/ANC_Visit/pptest/positive:label">positive</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/ANC_Visit/pptest" data-name="/ANC_Visit/pptest" value="negative" data-type-xml="select1" />
+               <span lang="Bahasa" class="option-label active" data-itext-id="/ANC_Visit/pptest/negative:label">negative</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
    <label class="note non-select ">
       <span lang="Bahasa" class="question-label active" data-itext-id="/ANC_Visit/generated_note_name_10:label">
          Usia Klinis :
