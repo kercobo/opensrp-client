@@ -16,6 +16,7 @@ import org.ei.opensrp.indonesia.view.activity.NativeKISmartRegisterActivity;
 import org.ei.opensrp.indonesia.view.contract.KartuIbuClient;
 import org.ei.opensrp.indonesia.view.controller.BidanVillageController;
 import org.ei.opensrp.indonesia.view.controller.KartuIbuRegisterController;
+import org.ei.opensrp.indonesia.view.cursorAdapter.CommonCursorAdapter;
 import org.ei.opensrp.indonesia.view.dialog.AllHighRiskSort;
 import org.ei.opensrp.indonesia.view.dialog.AllKartuIbuServiceMode;
 import org.ei.opensrp.indonesia.view.dialog.EstimatedDateOfDeliverySortKI;
@@ -59,6 +60,13 @@ public class NativeKISmartRegisterFragment extends BidanSecuredNativeSmartRegist
 
     @Override
     protected void onCreation() {
+    }
+
+    @Override
+    protected void onResumption(){
+        getClientsView().setAdapter(new CommonCursorAdapter(getActivity(), ((Context) context).kartuIbuRepository().allKartuIbusCursor()));
+              getClientsView().setVisibility(View.VISIBLE);
+               getClientsProgressView().setVisibility(View.INVISIBLE);
     }
 
     @Override

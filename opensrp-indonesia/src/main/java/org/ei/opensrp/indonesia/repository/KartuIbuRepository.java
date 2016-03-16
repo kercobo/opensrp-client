@@ -87,6 +87,12 @@ public class KartuIbuRepository extends DrishtiRepository{
         return readAllKartuIbus(cursor);
     }
 
+    public Cursor allKartuIbusCursor() {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+       // Cursor cursor = database.query(KI_TABLE_NAME,KI_TABLE_COLUMNS, IS_OUT_OF_AREA_COLUMN+ " = ? AND " + IS_CLOSED_COLUMN + " =?", new String[]{IN_AREA, NOT_CLOSED}, null, null, null, null);
+        Cursor cursor = database.rawQuery("Select id as _id,details,dusun,isClosed,isOutOfArea From kartu_ibu Where isClosed = 'false' And isOutOfArea = 'false' ", null);
+        return cursor;
+    }
     public List<KartuIbu> allKartuIbusWithOA() {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
         Cursor cursor = database.query(KI_TABLE_NAME, KI_TABLE_COLUMNS,
@@ -116,6 +122,13 @@ public class KartuIbuRepository extends DrishtiRepository{
         return kartuIbus.get(0);
     }
 
+    public Cursor findByCaseIDCursor(String caseId) {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.query(KI_TABLE_NAME, KI_TABLE_COLUMNS, ID_COLUMN + " = ?", new String[]{caseId},
+                null, null, null, null);
+       // List<KartuIbu> kartuIbus = readAllKartuIbus(cursor);
+        return cursor;
+    }
     public long count() {
         return longForQuery(masterRepository.getReadableDatabase(), "SELECT COUNT(1) FROM " + KI_TABLE_NAME
                 + " WHERE " + IS_CLOSED_COLUMN + " = '" + NOT_CLOSED + "'", new String[0]);

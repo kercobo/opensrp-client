@@ -64,6 +64,13 @@ public abstract class SecuredNativeSmartRegisterFragment extends SecuredFragment
     private View searchCancelView;
     private TextView titleLabelView;
 
+    public ListView getClientsView() {
+                return clientsView;
+            }
+    public ProgressBar getClientsProgressView() {
+                return clientsProgressView;
+            }
+
     public EditText getSearchView() {
         return searchView;
     }
