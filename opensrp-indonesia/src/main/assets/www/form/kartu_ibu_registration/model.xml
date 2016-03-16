@@ -1,55 +1,51 @@
 <model>
   <instance>
-    <Kartu_ibu encounter_type="Identitas Ibu" id="Kartu_ibu" version="201511260619">
+    <identitas_ibu_reviewed encounter_type="Identitas Ibu" id="Kartu_ibu" version="201603151549">
       <formhub>
         <uuid/>
       </formhub>
-      <start/>
-      <today/>
+      <start openmrs_entity="concept" openmrs_entity_id="163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <end openmrs_entity="concept" openmrs_entity_id="163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <today openmrs_entity="encounter" openmrs_entity_id="encounter_date"/>
       <deviceid/>
       <simserial/>
       <phonenumber/>
-      <unique_id/>
-      <generated_note_name_8/>
-      <Village/>
-      <generated_note_name_10/>
-      <Sub-village/>
-      <generated_note_name_12/>
       <Province/>
       <District/>
       <Sub-district/>
-      <Lokasi_periksa/>
-      <nik/>
-      <puskesmas/>
-      <no_ibu/>
-      <nama_lengkap/>
-      <nama_suami/>
-      <tanggal_lahir_ibu/>
-      <umur/>
-      <generated_note_name_22/>
-      <alamat_domisili/>
-      <pendidikan/>
-      <agama/>
-      <pekerjaan>Ibu rumah tangga</pekerjaan>
-      <gakin_tidak/>
-      <posyandu/>
-      <nama_kader/>
-      <nama_dukun/>
-      <asuransi_jiwa/>
-      <golongan_darah/>
-      <nomor_telpon_hp/>
-      <pptest/>
+      <Village/>
+      <Sub-village openmrs_entity="encounter" openmrs_entity_id="location_id"/>
+      <tanggal_periksa openmrs_entity="concept" openmrs_entity_id="160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <Lokasi_periksa openmrs_entity="concept" openmrs_entity_id="161010AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <Lokasi_periksa_other openmrs_entity="concept" openmrs_entity_id="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" openmrs_entity_parent="Location of event - 161010AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <unique_id openmrs_entity="person_attribute"/>
+      <generated_note_name_17/>
+      <puskesmas openmrs_entity="concept" openmrs_entity_id="162724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <no_ibu openmrs_entity="person_attribute"/>
+      <nik openmrs_entity="person_attribute"/>
+      <nama_lengkap openmrs_entity="person"/>
+      <nama_suami openmrs_entity="person"/>
+      <tanggal_lahir_ibu openmrs_entity="person"/>
+      <umur openmrs_entity="concept" openmrs_entity_id="1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <generated_note_name_25/>
+      <jenis_kelamin openmrs_entity="person/gender">Female</jenis_kelamin>
+      <alamat_domisili openmrs_entity="person"/>
+      <pendidikan openmrs_entity="concept" openmrs_entity_id="1712AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <agama openmrs_entity="concept" openmrs_entity_id="162929AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <pekerjaan openmrs_entity="concept" openmrs_entity_id="1542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">Ibu rumah tangga</pekerjaan>
+      <gakin_tidak openmrs_entity="concept"/>
+      <posyandu openmrs_entity="concept" openmrs_entity_id="162724AAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <nama_kader openmrs_entity="person_attribute/"/>
+      <nama_dukun openmrs_entity="person_attribute/"/>
+      <asuransi_jiwa openmrs_entity="concept" openmrs_entity_id="159356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <golongan_darah openmrs_entity="concept" openmrs_entity_id="300AAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <nomor_telpon_hp openmrs_entity="concept" openmrs_entity_id="159635AAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <pptest openmrs_entity="concept" openmrs_entity_id="45AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
       <High_Risk_Pregnancy_Young_maternal_age/>
       <High_Risk_Pregnancy_Old_maternal_age/>
-      <dusun/>
-      <desa/>
-      <provinsi/>
-      <kabupaten/>
-      <kecamatan/>
-      <end/>
       <meta>
         <instanceID/>
       </meta>
-    </Kartu_ibu>
+    </identitas_ibu_reviewed>
   </instance>
 </model>
