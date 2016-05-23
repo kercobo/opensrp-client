@@ -56,7 +56,9 @@ public class AllKartuIbus {
     public List<KartuIbu> findByCaseIDs(List<String> caseIds) {
         return kartuIbuRepository.findByCaseIDs(caseIds.toArray(new String[caseIds.size()]));
     }
-
+    public void updatePhotoPath(String caseId, String imagePath) {
+        kartuIbuRepository.updatePhotoPath(caseId, imagePath);
+    }
     public void close(String entityId) {
         alertRepository.deleteAllAlertsForEntity(entityId);
         timelineEventRepository.deleteAllTimelineEventsForEntity(entityId);

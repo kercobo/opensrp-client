@@ -28,16 +28,17 @@ import static org.ei.opensrp.indonesia.AllConstantsINA.KeluargaBerencanaFields.C
  */
 public class KartuIbuRepository extends DrishtiRepository{
 
-    private static final String KI_SQL = "CREATE TABLE kartu_ibu(id VARCHAR PRIMARY KEY, details VARCHAR, dusun VARCHAR, isClosed VARCHAR, isOutOfArea VARCHAR)";
+    private static final String KI_SQL = "CREATE TABLE kartu_ibu(id VARCHAR PRIMARY KEY, details VARCHAR, dusun VARCHAR, isClosed VARCHAR, isOutOfArea VARCHAR,photoPath VARCHAR)";
     public static final String ID_COLUMN = "id";
     public static final String DETAILS_COLUMN = "details";
     private static final String IS_CLOSED_COLUMN = "isClosed";
     public static final String DUSUN_COLUMN = "dusun";
     public static final String IS_OUT_OF_AREA_COLUMN = "isOutOfArea";
+    public static final String PHOTO_PATH_COLUMN = "photoPath";
     public static final String KI_TABLE_NAME = "kartu_ibu";
     public static final String[] KI_TABLE_COLUMNS = new String[]{ID_COLUMN, DETAILS_COLUMN,
             DUSUN_COLUMN,
-            IS_CLOSED_COLUMN, IS_OUT_OF_AREA_COLUMN};
+            IS_CLOSED_COLUMN, IS_OUT_OF_AREA_COLUMN,PHOTO_PATH_COLUMN};
 
     public static final String NOT_CLOSED = "false";
     private static final String IN_AREA = "false";
@@ -151,6 +152,7 @@ public class KartuIbuRepository extends DrishtiRepository{
         values.put(DETAILS_COLUMN, new Gson().toJson(kartuIbu.getDetails()));
         values.put(DUSUN_COLUMN, kartuIbu.dusun());
         values.put(IS_CLOSED_COLUMN, Boolean.toString(kartuIbu.isClosed()));
+        values.put(PHOTO_PATH_COLUMN, kartuIbu.photoPath());
         return values;
     }
 
@@ -167,6 +169,12 @@ public class KartuIbuRepository extends DrishtiRepository{
         return villages;
     }
 
+    public void updatePhotoPath(String caseId, String imagePath) {
+        SQLiteDatabase database = masterRepository.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(PHOTO_PATH_COLUMN, imagePath);
+        database.update(KI_TABLE_NAME, values, ID_COLUMN + " = ?", new String[]{caseId});
+    }
 
     private List<KartuIbu> readAllKartuIbus(Cursor cursor) {
         cursor.moveToFirst();
@@ -177,6 +185,7 @@ public class KartuIbuRepository extends DrishtiRepository{
                     }.getType()), cursor.getString(2));
             kartuIbu.setClosed(Boolean.valueOf(cursor.getString(3)));
             kartuIbu.setOutOfArea(Boolean.valueOf(cursor.getString(4)));
+            kartuIbu.withPhotoPath(cursor.getString(5));
             kartuIbus.add(kartuIbu);
             cursor.moveToNext();
         }

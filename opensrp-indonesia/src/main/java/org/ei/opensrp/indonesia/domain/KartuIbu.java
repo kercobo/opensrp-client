@@ -18,6 +18,7 @@ public class KartuIbu {
     private String dusun;
     private boolean isClosed;
     private boolean isOutOfArea;
+    private String photoPath;
 
     public KartuIbu(String caseId, Map<String, String> details, String dusun) {
         this.caseId = caseId;
@@ -25,6 +26,15 @@ public class KartuIbu {
         this.isClosed = false;
         this.isOutOfArea = false;
         this.dusun = dusun;
+        this.photoPath = null;
+    }
+
+    public KartuIbu withPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
+        return this;
+    }
+    public String photoPath() {
+        return photoPath;
     }
 
     // Getter

@@ -196,7 +196,7 @@ public class NativeKISmartRegisterFragment extends BidanSecuredNativeSmartRegist
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.profile_info_layout_ki:
-                    showProfileView((KartuIbuClient) view.getTag());
+                    showProfileView1((KartuIbuClient) view.getTag());
                     break;
                 case R.id.btn_edit:
                     showFragmentDialog(new EditDialogOptionModel(), view.getTag());
@@ -204,6 +204,9 @@ public class NativeKISmartRegisterFragment extends BidanSecuredNativeSmartRegist
             }
         }
 
+        private void showProfileView1(KartuIbuClient kartuIbuClient) {
+            navigationControllerINA.startCamera(kartuIbuClient.entityId());
+        }
         private void showProfileView(KartuIbuClient kartuIbuClient) {
             ((NativeKISmartRegisterActivity)getActivity()).startDetailFragment(kartuIbuClient.entityId());
         }

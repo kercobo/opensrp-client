@@ -18,7 +18,7 @@ public class AllConstants {
     public static final String KANNADA_LANGUAGE = "Kannada";
     public static final String IS_SYNC_IN_PROGRESS_PREFERENCE_KEY = "isSyncInProgress";
     public static final String TYPE = "type";
-    public static final String WOMAN_TYPE = "woman";
+    public static final String WOMAN_TYPE = "ibu";
     public static final String CHILD_TYPE = "child";
     public static final String REALM = "OpenSRP";
     public static final String FORM_DOWNLOAD_URL = "/form/form-files?formDirName=";
