@@ -30,6 +30,8 @@ public class CameraLaunchActivity extends SecuredActivity {
     private static final int TAKE_PHOTO_REQUEST_CODE = 111;
     private static final String JPG_FILE_SUFFIX = ".jpg";
     private static final String DRISTHI_DIRECTORY_NAME = "Dristhi";
+    private org.ei.opensrp.indonesia.repository.AllKartuIbus allKartuIbus;
+
     private File imageFile;
     private org.ei.opensrp.indonesia.Context context;
     private String entityType;
@@ -104,7 +106,7 @@ public class CameraLaunchActivity extends SecuredActivity {
 
     private void updateEntity(String imagePath) {
       //  if (WOMAN_TYPE.equals(entityType)) {
-            context.allKartuIbus().updatePhotoPath(entityId, imagePath);
+            allKartuIbus.updatePhotoPath(entityId, imagePath);
       //  }
      //   if(CHILD_TYPE.equals(entityType)) {
       //     context.allKartuIbus().updatePhotoPath(entityId, imagePath);
