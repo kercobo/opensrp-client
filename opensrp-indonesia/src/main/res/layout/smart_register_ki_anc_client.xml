@@ -92,13 +92,20 @@
                 style="@style/CustomFontTextViewStyle.ListView.Small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="EDD :"/>
+                android:text="@string/edd_label"/>
 
             <org.ei.opensrp.view.customControls.CustomFontTextView
                 android:id="@+id/txt_htpt"
                 style="@style/CustomFontTextViewStyle.ListView.Small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="14/08/2014"/>
+            <org.ei.opensrp.view.customControls.CustomFontTextView
+                android:id="@+id/txt_edd_due"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/alert_urgent_red"
                 android:text="14/08/2014"/>
         </LinearLayout>
 
@@ -184,7 +191,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Something "/>
+                android:text=" "/>
 
             <org.ei.opensrp.view.customControls.CustomFontTextView
                 android:id="@+id/txt_anc_number"
@@ -193,7 +200,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Something "/>
+                android:text=" "/>
 
             <org.ei.opensrp.view.customControls.CustomFontTextView
                 android:id="@+id/txt_kunjugan_ke"
@@ -202,7 +209,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:text="Something "/>
+                android:text=" "/>
 
 
         </LinearLayout>

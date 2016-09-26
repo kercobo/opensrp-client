@@ -237,6 +237,7 @@ public class ANCDetailActivity extends Activity {
         AllCommonsRepository iburep = org.ei.opensrp.Context.getInstance().allCommonsRepositoryobjects("kartu_ibu");
 
         final CommonPersonObject kiclients = iburep.findByCaseID(kiobject.getColumnmaps().get("kartuIbuId"));
+
         ancKe.setText(": "+(kiobject.getColumnmaps().get("ancKe") != null ? kiobject.getColumnmaps().get("ancKe") : "-"));
 
         ancDate.setText(": "+ (kiobject.getColumnmaps().get("ancDate") != null ? kiobject.getColumnmaps().get("ancDate") : "-"));
@@ -247,10 +248,10 @@ public class ANCDetailActivity extends Activity {
                 kiview.setImageDrawable(getResources().getDrawable(R.mipmap.woman_placeholder));
         }
 
-        nama.setText(getResources().getString(R.string.name)+ (ancclient.getColumnmaps().get("namalengkap") != null ? ancclient.getColumnmaps().get("namalengkap") : "-"));
-        nik.setText(getResources().getString(R.string.nik)+ (ancclient.getDetails().get("nik") != null ? ancclient.getDetails().get("nik") : "-"));
-        husband_name.setText(getResources().getString(R.string.husband_name)+ (ancclient.getColumnmaps().get("namaSuami") != null ? ancclient.getColumnmaps().get("namaSuami") : "-"));
-        dob.setText(getResources().getString(R.string.dob)+ (ancclient.getDetails().get("tanggalLahir") != null ? ancclient.getDetails().get("tanggalLahir") : "-"));
+        nama.setText(getResources().getString(R.string.name)+ (kiclients.getColumnmaps().get("namalengkap") != null ? kiclients.getColumnmaps().get("namalengkap") : "-"));
+        nik.setText(getResources().getString(R.string.nik)+ (kiclients.getDetails().get("nik") != null ? kiclients.getDetails().get("nik") : "-"));
+        husband_name.setText(getResources().getString(R.string.husband_name)+ (kiclients.getColumnmaps().get("namaSuami") != null ? kiclients.getColumnmaps().get("namaSuami") : "-"));
+        dob.setText(getResources().getString(R.string.dob)+ (kiclients.getDetails().get("tanggalLahir") != null ? kiclients.getDetails().get("tanggalLahir") : "-"));
         phone.setText("No HP: "+ (kiobject.getDetails().get("NomorTelponHp") != null ? kiobject.getDetails().get("NomorTelponHp") : "-"));
 
         //risk
